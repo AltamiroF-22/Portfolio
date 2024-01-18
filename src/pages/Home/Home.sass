@@ -1,0 +1,35 @@
+@use '../../styles/_variables'
+@use '../../styles/_mixins'
+
+.home-page
+   display: flex
+   justify-content: center
+   align-items: center
+   flex-direction: column
+
+   @include mixins.mobile
+      background: #e9e9e9 
+      padding: 2rem 2.5rem
+      border-radius: 1em 
+
+
+a 
+   background: #e9e9e9
+   border: solid 1px transparent
+   padding: .5rem 1rem
+   border-radius: 5px
+   margin-top: 20px
+   text-decoration: none
+   color: #000
+   z-index: 3
+
+   @include mixins.tablet
+      border-color: #f38
+      margin-top: 30px
+
+   &:hover 
+      border-color: #f38 
+   
+   
+
+
