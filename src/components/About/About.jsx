@@ -1,12 +1,36 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect } from "react";
 import "./About.sass";
 
-const About= () => {
+import MagnetoCircle from "../MagnetoCircle/MagnetoCircle";
+
+const About = () => {
+  useEffect(() => {
+
+    const articles = document.querySelectorAll(".hidden");
+
+    window.addEventListener("scroll", () => {
+
+      const innerHeightOfWindow = window.innerHeight;
+
+      articles.forEach((e) => {
+
+        const articleTop = e.getBoundingClientRect().top;
+
+        if (articleTop < innerHeightOfWindow) {
+          e.classList.add("apears");
+        } else {
+          e.classList.remove("apears");
+        }
+      });
+    });
+  }, []);
+
   return (
-    <main className="main-about">
-      <h1 className="component"> About me</h1>
+    <main className="main-about" id="about">
+      <MagnetoCircle backgroundColor={"white"} text={"About me"} />
       <section className=" section-about">
-        <article>
+        <article className="hidden">
           <h2>12/2022 </h2>
           <div className="spacing"></div>
           <p>
@@ -16,7 +40,7 @@ const About= () => {
             into the structures and design of web pages.
           </p>
         </article>
-        <article>
+        <article className="hidden">
           <h2>03/2023 </h2>
           <div className="spacing"></div>
           <p>
@@ -25,7 +49,7 @@ const About= () => {
             projects.
           </p>
         </article>
-        <article>
+        <article className="hidden">
           <h2>09/2023 </h2>
           <div className="spacing"></div>
           <p>
@@ -34,7 +58,7 @@ const About= () => {
             robust and stylized web applications.
           </p>
         </article>
-        <article>
+        <article className="hidden">
           <h2>12/2023 </h2>
           <div className="spacing"></div>
           <p>
@@ -45,7 +69,7 @@ const About= () => {
             growing as a developer.
           </p>
         </article>
-        <article>
+        <article className="hidden">
           <h2>01/2024 </h2>
           <div className="spacing"></div>
           <p>
@@ -53,26 +77,6 @@ const About= () => {
             TypeScript, adding an additional layer of typing and structure to my
             skill set. I'm eager to explore new horizons and face more complex
             challenges while continuing to improve my skills as a developer...
-          </p>
-        </article>
-        <article>
-          <h2>12/2022 </h2>
-          <div className="spacing"></div>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-            odit, cupiditate ab consequatur aut ducimus enim mollitia labore
-            animi. Accusamus quae consequuntur error, quisquam doloremque
-            molestiae veniam dolorum in! Quibusdam!
-          </p>
-        </article>
-        <article>
-          <h2>12/2022 </h2>
-          <div className="spacing"></div>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-            odit, cupiditate ab consequatur aut ducimus enim mollitia labore
-            animi. Accusamus quae consequuntur error, quisquam doloremque
-            molestiae veniam dolorum in! Quibusdam!
           </p>
         </article>
       </section>

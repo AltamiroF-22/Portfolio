@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Navbar.sass";
 //logos
-import Logo from "../../imgs/White_Logo.png";
-import LogoDark from "../../imgs/Dark_Logo.png";
+import LogoDark from "../../svg/White-Logo.svg";
+import Logo from "../../svg/Dark-Logo.svg";
 
 //icons
 import { SlMenu } from "react-icons/sl";
@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav>
       <img className="white-logo" src={Logo} alt="logo" />
 
-      { /* Menu Mobile */ }
+      {/* Menu Mobile */}
       {isMobile ? (
         <div
           className={isMenuOpen ? "nav-mobile-open-true" : "nav-mobile-open"}
@@ -46,7 +46,9 @@ const Navbar = () => {
           {isMenuOpen ? (
             <>
               <ul className="mobile-ul">
-                <li className="mobile-li">About</li>
+                <li>
+                  <a className="mobile" onClick={()=> setIsMenuOpen(false)} href="#about">About</a>
+                </li>
                 <li className="mobile-li">Projects</li>
                 <li className="mobile-li">Contact</li>
               </ul>
@@ -57,8 +59,10 @@ const Navbar = () => {
         </div>
       ) : (
         <ul>
-          { /* Menu Descktop */ }
-          <li>About</li>
+          {/* Menu Descktop */}
+          <li>
+            <a href="#about">About</a>
+          </li>
           <li>Projects</li>
           <li>Contact</li>
         </ul>

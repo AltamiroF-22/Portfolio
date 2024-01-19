@@ -7,21 +7,8 @@
     background-color: variables.$almost-black
     font-family: 'TT Firs Neue Trl'
     padding: 50px 0
-    .component
-
-        color: variables.$black
-        width: 100px
-        background: variables.$almost-white
-        height: 100px
-        display: flex
-        justify-content: center
-        align-items: center
-        border-radius: 50%
-        margin: 50px auto 70px  auto
-        font-size: 16px
-        
-
-
+    overflow-x: hidden
+   
     article
         width: 90%
         display: flex
@@ -90,5 +77,12 @@
         transform: translateX(50px)
         width: 320px
 
-   
-           
+    .hidden
+        transform: translateX(-120vw) scale(.5)
+        transition: .8s
+    .hidden:nth-last-of-type(odd)
+        transform: translateX(120vw) scale(.5)
+        transition: .8s
+
+    .hidden.apears
+        transform: translate(0) scale(1)
