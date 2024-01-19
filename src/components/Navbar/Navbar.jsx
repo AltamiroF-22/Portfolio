@@ -22,6 +22,8 @@ const Navbar = () => {
   return (
     <nav>
       <img className="white-logo" src={Logo} alt="logo" />
+
+      { /* Menu Mobile */ }
       {isMobile ? (
         <div
           className={isMenuOpen ? "nav-mobile-open-true" : "nav-mobile-open"}
@@ -55,6 +57,7 @@ const Navbar = () => {
         </div>
       ) : (
         <ul>
+          { /* Menu Descktop */ }
           <li>About</li>
           <li>Projects</li>
           <li>Contact</li>

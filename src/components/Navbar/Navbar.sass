@@ -31,19 +31,34 @@ nav
             transform: scale(1.5)
               
     .nav-mobile-open-true
+        z-index: 90
         width: 100vw
-        height: 100dvh
-        position: absolute
+        min-height: 100dvh
+        position: fixed
+        padding: 20px
         top: 50%
         left: 50%
         padding: 20px
+        display: flex
+        align-items: center
+        justify-content: center
+ 
         transform: translate(-50%, -50%)
         background-color: variables.$almost-black
         color: variables.$almost-white
+
+        .logo-menu-close
+            width: 80%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            position: absolute
+            top: 20px
+
         .mobile-ul
             flex-direction: column
             justify-content: center
-            height: 100%
+            width: 100%
             align-items: center
             gap: 100px
             font-size: 3rem
@@ -57,7 +72,7 @@ nav
 
 
         .menu-mobile-btn
-            position: absolute
+            // position: absolute
             top : 40px
             right: 40px
             transform: scale(2)

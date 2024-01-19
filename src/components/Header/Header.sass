@@ -1,0 +1,44 @@
+@use '../../styles/_variables'
+@use '../../styles/_mixins'
+    
+.welcome-txt
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    position: relative
+    height: calc( 100dvh -  90px )
+    font-family: 'Playfair Display', serif
+    text-align: center
+   
+
+    h1  
+        color: variables.$almost-black
+        font-size: 3rem
+        transform: translateY(-60px)
+        @include mixins.mobile
+            font-size: 2rem
+            width: 60%
+            line-height: 1.7
+           
+       
+
+        span
+            color: variables.$almost-white
+            background-color: variables.$orange 
+            padding: 2px  15px
+            border-radius: 3px
+            
+
+    .scroll-icon
+        position: absolute
+        bottom: 60px
+        .scrolling
+            width: 40px
+            height: 40px
+            border: none
+            outline: none
+            @include mixins.mobile
+                display: none
+
+

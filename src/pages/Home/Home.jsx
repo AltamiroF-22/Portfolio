@@ -1,4 +1,6 @@
 import Navbar from "../../components/Navbar/Navbar";
+import Header from "../../components/Header/Header";
+import About from "../../components/About/About";
 import "./Home.sass";
 
 const Home = () => {
@@ -6,7 +8,11 @@ const Home = () => {
     <>
       <header>
         <Navbar />
+        <Header />
       </header>
+      <>
+        <About />
+      </>
     </>
   );
 };

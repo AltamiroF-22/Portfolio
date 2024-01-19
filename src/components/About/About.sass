@@ -1,0 +1,94 @@
+@use '../../styles/_variables'
+@use '../../styles/_mixins'
+    
+.main-about
+    min-height: 100vh
+    position: relative
+    background-color: variables.$almost-black
+    font-family: 'TT Firs Neue Trl'
+    padding: 50px 0
+    .component
+
+        color: variables.$black
+        width: 100px
+        background: variables.$almost-white
+        height: 100px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        margin: 50px auto 70px  auto
+        font-size: 16px
+        
+
+
+    article
+        width: 90%
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 0 auto
+        gap: 70px
+        @include mixins.mobile
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 0
+            margin-bottom: 40px
+            
+
+            .spacing
+                display: none
+            h2
+                text-align: center
+                transform: translate(0)
+
+
+        p
+            width: 320px
+            text-align: center
+            color: variables.$white
+            background: variables.$almost-black
+            z-index: 3
+            position: relative
+            padding: 20px
+
+
+    article:nth-child(even)
+        flex-direction: row-reverse
+       
+        h2
+            text-align: start
+            transform: translateX(-50px)
+        .spacing
+            transform: rotate(90deg) translateY(55px) 
+
+        @include mixins.mobile      
+            flex-direction: column
+            margin-bottom: 40px
+            align-items: center
+            justify-content: center
+            gap: 0
+
+            .spacing
+                display: none
+            h2
+                text-align: center
+                transform: translate(0)
+
+    
+    .spacing
+        
+        height: 100px
+        width: 2px
+        transform: rotate(90deg) translateY(-58px) 
+        background: variables.$almost-white
+        
+    h2
+        color: variables.$almost-white
+        text-align: end
+        transform: translateX(50px)
+        width: 320px
+
+   
+           
