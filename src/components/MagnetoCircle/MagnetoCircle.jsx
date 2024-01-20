@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import "./MagnetoCircle.sass";
 
-const MagnetoCircle = ({ text, backgroundColor, img , size, position}) => {
+const MagnetoCircle = ({ text, backgroundColor, img , size, position, cursor}) => {
   const magnetoRef = useRef(null);
   const magnetoTextRef = useRef(null);
 
@@ -67,7 +67,7 @@ const MagnetoCircle = ({ text, backgroundColor, img , size, position}) => {
   }, []);
 
   return (
-    <h1 ref={magnetoRef} className={`magneto magneto-circle ${backgroundColor} ${size} ${position}`}>
+    <h1 ref={magnetoRef} className={`magneto magneto-circle ${backgroundColor} ${size} ${position} ${cursor}`}>
       <span ref={magnetoTextRef} className="text">{text}</span>
       <img ref={magnetoTextRef} src={img} />
     </h1>

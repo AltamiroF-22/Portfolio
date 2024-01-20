@@ -12,11 +12,17 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleResize = () => {
+    const width = window.innerWidth;
+    width >= 600 ? setIsMobile(false) : setIsMobile(true);
+  };
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      const width = window.innerWidth;
-      width >= 600 ? setIsMobile(false) : setIsMobile(true);
-    });
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -46,11 +52,33 @@ const Navbar = () => {
           {isMenuOpen ? (
             <>
               <ul className="mobile-ul">
-                <li>
-                  <a className="mobile" onClick={()=> setIsMenuOpen(false)} href="#about">About</a>
+                <li className="mobile-li">
+                  <a
+                    className="mobile"
+                    onClick={() => setIsMenuOpen(false)}
+                    href="#about"
+                  >
+                    About
+                  </a>
                 </li>
-                <li className="mobile-li">Projects</li>
-                <li className="mobile-li">Contact</li>
+                <li className="mobile-li">
+                  <a
+                    className="mobile"
+                    onClick={() => setIsMenuOpen(false)}
+                    href="#projects"
+                  >
+                    Projects
+                  </a>
+                </li>
+                <li className="mobile-li">
+                  <a
+                    className="mobile"
+                    onClick={() => setIsMenuOpen(false)}
+                    href="#projects"
+                  >
+                    Contact
+                  </a>
+                </li>
               </ul>
             </>
           ) : (
@@ -63,8 +91,12 @@ const Navbar = () => {
           <li>
             <a href="#about">About</a>
           </li>
-          <li>Projects</li>
-          <li>Contact</li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       )}
     </nav>

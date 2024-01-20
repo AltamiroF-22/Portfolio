@@ -5,6 +5,9 @@ import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/Header/Header";
 import About from "../../components/About/About";
 import BackTop from "../../components/BackTop/BackTop";
+import Projects from "../../components/Projetcs/Projects";
+
+//style
 import "./Home.sass";
 
 const Home = () => {
@@ -39,6 +42,7 @@ const Home = () => {
       )}
       <>
         <About />
+        <Projects />
       </>
     </>
   );

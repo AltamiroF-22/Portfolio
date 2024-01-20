@@ -2,12 +2,12 @@
 @use '../../styles/_mixins'
     
 .main-about
-    min-height: 100vh
     position: relative
     background-color: variables.$almost-black
     font-family: 'TT Firs Neue Trl'
     padding: 50px 0
-    overflow-x: hidden
+    overflow: hidden
+
    
     article
         width: 90%
@@ -16,6 +16,7 @@
         align-items: center
         margin: 0 auto
         gap: 70px
+        overflow: hidden
         @include mixins.mobile
             flex-direction: column
             align-items: center
@@ -29,6 +30,9 @@
             h2
                 text-align: center
                 transform: translate(0)
+                background: variables.$almost-black
+                padding: 20px 0 10px 0
+                margin-top: 100px
 
 
         p
@@ -48,7 +52,7 @@
             text-align: start
             transform: translateX(-50px)
         .spacing
-            transform: rotate(90deg) translateY(55px) 
+            transform: rotate(90deg) translateY(52px) 
 
         @include mixins.mobile      
             flex-direction: column
@@ -68,7 +72,7 @@
         
         height: 100px
         width: 2px
-        transform: rotate(90deg) translateY(-58px) 
+        transform: rotate(90deg) translateY(-50px) 
         background: variables.$almost-white
         
     h2
@@ -78,11 +82,19 @@
         width: 320px
 
     .hidden
-        transform: translateX(-120vw) scale(.5)
+        transform: translateX(120vw) scale(.5)
         transition: .8s
     .hidden:nth-last-of-type(odd)
-        transform: translateX(120vw) scale(.5)
+        transform: translateX(-120vw) scale(.5)
         transition: .8s
 
     .hidden.apears
         transform: translate(0) scale(1)
+.row
+    width: 2px
+    height: 75%
+    background-color: variables.$light-gray
+    // background-color: variables.$orange
+    position: absolute 
+    transform: translateX(-50%)
+    left: 50%

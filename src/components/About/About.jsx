@@ -6,17 +6,12 @@ import MagnetoCircle from "../MagnetoCircle/MagnetoCircle";
 
 const About = () => {
   useEffect(() => {
-
     const articles = document.querySelectorAll(".hidden");
-
     window.addEventListener("scroll", () => {
-
       const innerHeightOfWindow = window.innerHeight;
 
       articles.forEach((e) => {
-
         const articleTop = e.getBoundingClientRect().top;
-
         if (articleTop < innerHeightOfWindow) {
           e.classList.add("apears");
         } else {
@@ -30,6 +25,8 @@ const About = () => {
     <main className="main-about" id="about">
       <MagnetoCircle backgroundColor={"white"} text={"About me"} />
       <section className=" section-about">
+        <div className="row"></div>
+
         <article className="hidden">
           <h2>12/2022 </h2>
           <div className="spacing"></div>

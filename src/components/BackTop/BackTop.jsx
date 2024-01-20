@@ -5,7 +5,7 @@ import "./BackTop.sass";
 const BackTop = () => {
   return (
     <div className="btn">
-      <MagnetoCircle backgroundColor={"orange"} size={"small"} img={ArrowUp} position={'fixed'} />
+      <MagnetoCircle cursor={'pointer'} backgroundColor={"orange"} size={"small"} img={ArrowUp} position={'fixed'} />
     </div>
   );
 };
