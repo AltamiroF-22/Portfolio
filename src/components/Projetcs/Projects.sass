@@ -16,55 +16,43 @@
             justify-content: center
             align-items: center
             trasition: 2s
-
+            overflow-x: hidden
             &:hover
                 
                 background-color: variables.$almost-black
-                h1
-                    color: variables.$almost-white
-                h3
-                    color: variables.$almost-white
 
                 .built-with
                     color: variables.$almost-white
                 .content
-                    padding: 40px 0
+                    padding: 30px 0
+                    color: variables.$almost-white
 
             .first
-                border-top: solid 1px variables.$almost-black
+                border-top: solid 1px #ccc
+                
             .content
                 transition: .2s
                 display: flex
                 justify-content: space-between
                 align-items: center
-                padding: 25px 0
-                border-bottom: solid 1px variables.$almost-black
+                padding: 20px 0
+                border-bottom: solid 1px #ccc
                 width: 80%
-                min-width: 600px
-                gap: 20px
-        
-              
-                
-                    
-
-
-                h1
-                    font-size: 1.3rem
-
-
-                .content-main
-                    display: flex
+                gap: 40px
+                flex-wrap: wrap
+                @include mixins.tablet           
                     flex-direction: column
                     gap: 20px
-
-
-                    h3
-                        max-width: 220px
-
-
-                    .built-with
-                        display: flex
-                        gap: 10px
+                    
+                h1
+                    font-size: 1.3rem
+                    font-family: 'TT Firs Neue Trl'
+                    @include mixins.mobile
+                        font-size: 1.1rem
+                        
+                .content-main     
+                    display: flex
+                    gap: 10px
 
                 .project-image
                     display: flex
